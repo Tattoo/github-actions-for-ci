@@ -1,0 +1,14 @@
+name: Team's approval workflow
+on: pull_request_review
+jobs:
+  label-when-approved:
+    runs-on: ubuntu-latest
+    name: APPROVED
+    steps:
+      - name: APPROVED
+        uses: pullreminders/label-when-approved-action@master
+        env:
+          APPROVALS: "2"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ADD_LABEL: "LGTM"
+          REMOVE_LABEL: "waiting%20for%20someone"
